@@ -1,3 +1,226 @@
-h1 {
-    color: red;
+@font-face {
+    font-family: GentiumPlus;
+    src: url(../fonts/GentiumPlus-Regular.ttf);
+}
+
+@font-face {
+    font-family: GentiumPlus-Bold;
+    src: url(../fonts/GentiumPlus-Bold.ttf);
+}
+
+:root {
+    font-size: 10px;
+}
+
+body {
+    display: grid;
+    grid-template-columns: 1fr 5fr;
+    grid-template-rows: 1fr 5fr;
+    grid-template-areas: 
+        "aside header"
+        "aside main";
+    height: 100vh;
+    margin: 0;
+    font-family: GentiumPlus, sans-serif;
+}
+
+/*  */
+header {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-area: header;
+    box-shadow: 0rem 0.5rem 0.5rem black;
+}
+
+.header-item {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 10px;
+    margin: auto 2rem auto 2rem;
+    font-size: 2rem;
+}
+
+.header-item>button {
+    background-color: #0ea5e9;
+    border: 0px solid white;
+    border-radius: 2rem;
+    color: white;
+    padding: 1rem 2rem 1rem 2rem;
+}
+
+#search-bar>input {
+    background-color: rgba(186, 196, 216, 0.5);
+    border: 0px solid white;
+    border-radius: 1rem;
+    width: 100%;
+    height: 20px;
+}
+ /* */
+aside {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-area: aside;
+    justify-content: start;
+    align-content: start;
+    gap: 2rem;
+    background-color: #0ea5e9;
+    color:white;
+}
+
+#branding {
+    font-size: 3rem;
+    padding: 2rem 2rem 0 2rem;
+}
+
+h1, h2, h3{
+    padding: 0;
+    margin: 0;
+}
+
+nav>ul {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding: 0;
+    gap: 1rem;
+}
+
+.aside-item {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 2rem;
+    font-size: 2rem;
+    list-style-type: none;
+    padding: 0rem 0rem 0rem 3rem ;
+}
+/*  */
+main {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-template-areas: 
+        "projects announcements"
+        "projects trending";
+    grid-area: main;
+    gap: 1rem;
+    background-color: rgba(186, 196, 216, 0.5);
+}
+
+.main-item {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    margin: 2rem;
+}
+
+main h3{
+    font-size: 2rem;
+}
+
+#projects {
+    grid-area: projects;
+}
+
+#projects ul{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    padding: 0rem;
+    gap: 20px;
+    width: 100%;
+}
+
+#projects ul p {
+    font-size: 1.5rem;
+}
+.project {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 1fr auto;
+    border-left-color: #0ea5e9;
+    border-left-width: 1rem;
+    border-left-style: solid;
+    border-radius: 2rem;
+    list-style-type: none;
+    background-color: white;
+    height: 200px;
+    padding: 2rem 2rem 2rem 2rem;
+}
+
+.project section {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 20px;
+}
+
+#announcements {
+    grid-area: announcements;
+}
+
+#announcements ul {
+    display: grid;
+    grid-auto-flow: row;
+    grid-template-columns: 1fr;  
+    background-color: white;
+    border-radius: 2rem;
+    height: 100%;
+    width: 90%;
+    padding: 2rem;
+}
+
+#announcements ul hr {
+    width: 100%;
+}
+
+#announcements ul li {
+    list-style-type: none;
+}
+
+#announcements ul li h3{
+    font-size: 2rem;
+}
+
+#announcements ul li p {
+    font-size: 1.5rem;
+}
+
+
+#trending {
+    grid-area: trending;
+}
+
+#trending ul{
+    display: grid;
+    grid-auto-flow: row;
+    grid-template-columns: 1fr;
+    background-color: white;
+    border-radius: 2rem;
+    height: 100%;
+    width: 90%;
+    padding: 2rem;
+}
+#trending ul li {
+    list-style-type: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 10px;
+}
+
+#trending h3 {
+    font-size: 2rem;
+    margin: 0;
+}
+#trending p {
+    font-size: 1.5rem;
+    margin: 0;
 }
